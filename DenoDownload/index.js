@@ -25,15 +25,27 @@ function getDownloadUrl (version) {
 
 async function acquireDeno (downloadUrl) {
   const downloadPath = await toolLib.downloadTool(downloadUrl)
-  const extractPath = await toolLib.extractZip(downloadPath, join(taskLib.getVariable('Agent.TempDirectory'), 'deno'))
+  const extractDir = join(taskLib.getVariable('Agent.TempDirectory'), 'deno')
+  const extractPath = await toolLib.extractZip(downloadPath, extractDir)
 
-  const toolPath = await toolLib.cacheDir(extractPath, 'deno', '1.2.0')
+  return extractPath
 }
 
 async function run() {
   try {
-    const downloadUrl = getDownloadUrl('1.0.3')
-    await acquireDeno(downloadUrl)
+    const version = taskLib.getInput("version", true)
+    let toolPath = toolLib.findLocalTool('deno', version)
+    if (!toolPath) {
+      taskLib.debug('Deno not found')
+      const downloadUrl = getDownloadUrl(version)
+      taskLib.debug(`Using ${downloadUrl} to get binaries`)
+      const unzipPath = await acquireDeno(downloadUrl)
+
+      toolPath = await toolLib.cacheDir(unzipPath, 'deno', version)
+    }
+
+    taskLib.debug('Adding tool to PATH')
+    toolLib.prependPath(toolPath);
   } catch (error) {
     taskLib.setResult(taskLib.TaskResult.Failed, error.message);
   }

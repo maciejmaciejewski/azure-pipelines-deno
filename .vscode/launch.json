@@ -13,8 +13,27 @@
         ],
         "program": "${workspaceFolder}/DenoDownload/index.js",
         "env": {
-          "AGENT_TEMPDIRECTORY": "${workspaceFolder}/DenoDownload/temp",
-          "AGENT_TOOLSDIRECTORY": "${workspaceFolder}/DenoDownload/temp"
+          "AGENT_TEMPDIRECTORY": "${workspaceFolder}/DenoDownload/test/temp",
+          "AGENT_TOOLSDIRECTORY": "${workspaceFolder}/DenoDownload/test/tools",
+          "INPUT_VERSION": "1.0.3"
+        },
+        "outputCapture": "std"
+      },
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "Run Deno",
+        "skipFiles": [
+          "<node_internals>/**"
+        ],
+        "program": "${workspaceFolder}/DenoRun/index.js",
+        "env": {
+          "AGENT_TEMPDIRECTORY": "",
+          "INPUT_TARGETTYPE": "",
+          "INPUT_PERMISSIONS": "",
+          "INPUT_ARGUMENTS": "",
+          "INPUT_FILEPATH": "",
+          "INPUT_SCRIPT": ""
         },
         "outputCapture": "std"
       }

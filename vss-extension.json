@@ -1,0 +1,49 @@
+{
+  "manifestVersion": 1,
+  "id": "azure-pipelines-deno",
+  "publisher": "MaciejMaciejewski",
+  "version": "1.0.0",
+  "author": "Maciej Maciejewski",
+  "name": "Deno Tools",
+  "description": "",
+  "public": false,
+  "categories": ["Azure Pipelines"],
+  "icons": {
+    "default": "icon.png"
+  },
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "uri": "https://github.com/maciejmaciejewski/azure-pipelines-deno"
+  },
+  "content": {
+    "details": {
+      "path": "OVERWIEW.md"
+    },
+    "license": {
+      "path": "LICENSE"
+    }
+  },
+  "contributions": [
+    {
+      "id": "DenoDownload",
+      "type": "ms.vss-distributed-task.task",
+      "targets": ["ms.vss-distributed-task.tasks"],
+      "properties": {
+        "name": "DenoDownload",
+        "displayName": "Deno Download"
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "./NodeJsExec",
+      "packagePath": "Tasks/NodeJsExec",
+      "addressable": false
+    }
+  ]
+}

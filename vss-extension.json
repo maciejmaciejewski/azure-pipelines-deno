@@ -22,7 +22,7 @@
   },
   "content": {
     "details": {
-      "path": "OVERWIEW.md"
+      "path": "README.md"
     },
     "license": {
       "path": "LICENSE"
@@ -37,12 +37,26 @@
         "name": "DenoDownload",
         "displayName": "Deno Download"
       }
+    },
+    {
+      "id": "DenoRun",
+      "type": "ms.vss-distributed-task.task",
+      "targets": ["ms.vss-distributed-task.tasks"],
+      "properties": {
+        "name": "DenoRun",
+        "displayName": "Deno Run"
+      }
     }
   ],
   "files": [
     {
-      "path": "./NodeJsExec",
-      "packagePath": "Tasks/NodeJsExec",
+      "path": "./DenoDownload",
+      "packagePath": "DenoDownload",
+      "addressable": false
+    },
+    {
+      "path": "./DenoRun",
+      "packagePath": "DenoRun",
       "addressable": false
     }
   ]

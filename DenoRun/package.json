@@ -1,12 +1,12 @@
 {
-  "name": "deno-download",
+  "name": "deno-run",
   "version": "1.0.0",
-  "description": "Download Deno",
+  "description": "Run Deno",
   "main": "index.js",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/maciejmaciejewski/azure-pipelines-deno"
+    "url": "git+https://github.com/maciejmaciejewski/azure-pipelines-deno.git"
   },
   "author": "Maciej Maciejewski",
   "license": "ISC",
@@ -16,9 +16,7 @@
   "homepage": "https://github.com/maciejmaciejewski/azure-pipelines-deno#readme",
   "dependencies": {
     "azure-pipelines-task-lib": "^2.9.5",
-    "azure-pipelines-tool-lib": "^0.12.0"
-  },
-  "devDependencies": {
-    "standard": "^14.3.4"
+    "azure-pipelines-tool-lib": "^0.12.0",
+    "hat": "0.0.3"
   }
 }

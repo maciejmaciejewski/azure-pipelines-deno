@@ -10,6 +10,12 @@ steps:
     workingDir: DenoDownload
     verbose: false
 
+- task: Npm@1
+  displayName: 'NPM: Install Task Dependencies'
+  inputs:
+    workingDir: DenoRun
+    verbose: false
+
 - task: PackageAzureDevOpsExtension@2
   displayName: 'TFX: Package Extension'
   inputs:

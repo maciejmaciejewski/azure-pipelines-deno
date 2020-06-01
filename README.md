@@ -62,3 +62,7 @@ Another parameter is an optional `cwd` which set up current working directory fo
       --unstable
       --allow-read
 ```
+
+### Icons
+
+Icons made by Freepik from www.flaticon.com

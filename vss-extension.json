@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "id": "azure-pipelines-deno",
   "publisher": "MaciejMaciejewski",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Maciej Maciejewski",
   "name": "Deno Tools",
   "description": "",
@@ -11,6 +11,11 @@
   "icons": {
     "default": "icon.png"
   },
+  "tags": [
+    "Deno",
+    "TypeScript",
+    "JavaScript"
+  ],
   "targets": [
     {
       "id": "Microsoft.VisualStudio.Services"

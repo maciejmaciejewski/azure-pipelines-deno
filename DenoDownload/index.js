@@ -19,8 +19,11 @@ function getDownloadUrl (version) {
     default: throw new Error(`Unexpected OS '${agentPlatform}'`);
   }
 
-  const url = `https://github.com/denoland/deno/releases/download/v${version}/${targetFile}`
-  return url
+  if(version === 'latest') {
+    return `https://github.com/denoland/deno/releases/latest/download/${targetFile}`
+  }
+
+  return `https://github.com/denoland/deno/releases/download/v${version}/${targetFile}`
 }
 
 async function acquireDeno (downloadUrl) {
